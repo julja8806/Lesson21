@@ -1,11 +1,18 @@
 package by.itstep.julja8806.model.logic;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+
 import static org.junit.Assert.*;
 public class ArraySorterTest {
-    private int[] array;
+    private static int[] array;
+    @BeforeClass
+    public static void initGlobal(){
+        array =  new int[]{7, 5, 6, 4, 5, 3, 4, 2, 3, 1};
+    }
+    @AfterClass
+    public static void destroyedGlobal(){
+        array = null;
+    }
     @Before
     public void init(){
         array =  new int[]{7, 5, 6, 4, 5, 3, 4, 2, 3, 1};
